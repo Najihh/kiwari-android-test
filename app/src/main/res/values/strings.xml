@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">KiwariChat</string>
+
+    <string name="login_greet">Selamat Datang</string>
+    <string name="login_subgreet">Masuk ke akunmu untuk melanjutkan</string>
+    <string name="login_username">Username atau Email</string>
+    <string name="login_usernamehint">masnajih</string>
+    <string name="login_password">Password</string>
+    <string name="login_passwordhint">*******</string>
+    <string name="login_forgot">Lupa password ?</string>
+    <string name="login_button">Masuk</string>
+</resources>

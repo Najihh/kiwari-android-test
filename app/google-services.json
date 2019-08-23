@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "520561934240",
+    "firebase_url": "https://kiwari-android.firebaseio.com",
+    "project_id": "kiwari-android",
+    "storage_bucket": "kiwari-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520561934240:android:72e17670541876be",
+        "android_client_info": {
+          "package_name": "com.senjacreative.kiwarichat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520561934240-qjli9ab3stts77ogml56t5j27rkahd6e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senjacreative.kiwarichat",
+            "certificate_hash": "d5ce3add96ad43888b8dc8cad3071f00a468b14d"
+          }
+        },
+        {
+          "client_id": "520561934240-liadndkch5n49dulf4ab1t1ivuglvepr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL9LNt5pYg9HJS4PwbP51GrD7VJCB12Lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520561934240-liadndkch5n49dulf4ab1t1ivuglvepr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
