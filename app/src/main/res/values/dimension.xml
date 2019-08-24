@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="textSmall">12sp</dimen>
+    <dimen name="textNormal">14sp</dimen>
     <dimen name="textMedium">16sp</dimen>
+    <dimen name="textMediumExtra">20sp</dimen>
     <dimen name="textLarge">24sp</dimen>
     <dimen name="textExtraLarge">28sp</dimen>
     <dimen name="rounded_edittext">10dp</dimen>
     <dimen name="rounded_button">10dp</dimen>
+    <dimen name="rounded_chat">10dp</dimen>
 </resources>

@@ -9,4 +9,8 @@
     <string name="login_passwordhint">*******</string>
     <string name="login_forgot">Lupa password ?</string>
     <string name="login_button">Masuk</string>
+
+
+    <string name="dummy_text">What you need to do is to have this LinearLayout of yours put inside a RelativeLayout. The relative layout is preferably your root layout with</string>
+
 </resources>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginTop="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/chat_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="25">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="bottom|center_horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:src="@color/colorChatGrey"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:background="@drawable/chatbox_left">
+
+            <TextView
+                android:text="@string/dummy_text"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textNormal"
+                android:fontFamily="@font/nunito"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="15"/>
+            <TextView
+                android:text="7:20"
+                android:textColor="@color/colorChatText"
+                android:textSize="@dimen/textSmall"
+                android:fontFamily="@font/nunito"
+                android:layout_gravity="bottom|end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/chat_right"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="25">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:background="@drawable/chatbox_right">
+
+            <TextView
+                android:text="@string/dummy_text"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textNormal"
+                android:fontFamily="@font/nunito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"/>
+            <TextView
+                android:text="7:20"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/textSmall"
+                android:fontFamily="@font/nunito"
+                android:layout_gravity="bottom|end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="bottom|center_horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:src="@color/colorPrimary"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
