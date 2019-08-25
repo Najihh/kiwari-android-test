@@ -9,4 +9,5 @@
     <color name="colorBlack">#000000</color>
     <color name="colorChatGrey">#E7E7E7</color>
     <color name="colorChatText">#696969</color>
+    <color name="colorNotif">#005EAA</color>
 </resources>

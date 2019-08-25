@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <TextView
+        android:fontFamily="@font/nunito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textMediumExtra"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:text="@string/app_name"/>
+
+    <TextView
+        android:fontFamily="@font/nunito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textNormal"
+        android:textColor="@color/colorBlack"
+        android:text="@string/app_about"/>
+
+    <TextView
+        android:id="@+id/made"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="end"
+        android:textAlignment="textEnd"
+        android:fontFamily="@font/nunito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSmall"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/app_made"/>
+
+</LinearLayout>

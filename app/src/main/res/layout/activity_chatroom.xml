@@ -25,14 +25,18 @@
                 android:orientation="horizontal">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/avatar"
                     android:layout_gravity="center_vertical"
                     android:src="@color/colorWhite"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp" />
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="@color/colorWhite"/>
 
                 <TextView
+                    android:id="@+id/name"
                     android:layout_marginStart="10dp"
-                    android:text="@string/login_usernamehint"
+                    android:text="@string/login_emailhint"
                     android:textStyle="bold"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textMediumExtra"
@@ -48,6 +52,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/header"
+        android:id="@+id/chat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/footer">
@@ -61,18 +66,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="15dp"
+        android:padding="10dp"
         android:weightSum="30">
 
-        <EditText
-            android:textSize="@dimen/textMedium"
-            android:fontFamily="@font/nunito"
-            android:layout_gravity="center_vertical"
-            android:padding="10dp"
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="25"
-            android:background="@drawable/messagesbox"/>
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="@dimen/rounded_edittext">
+
+            <EditText
+                android:id="@+id/message"
+                android:textSize="@dimen/textMedium"
+                android:fontFamily="@font/nunito"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/messagesbox"/>
+        </androidx.cardview.widget.CardView>
 
         <RelativeLayout
             android:layout_gravity="center_vertical"
@@ -81,10 +97,13 @@
             android:layout_weight="5">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/send"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center_vertical"
                 android:src="@color/colorPrimaryDark"
                 android:layout_width="40dp"
+                app:civ_border_color="@color/colorWhite"
+                app:civ_border_width="2dp"
                 android:layout_height="40dp" />
 
             <ImageView

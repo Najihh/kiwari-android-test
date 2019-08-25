@@ -1,16 +1,60 @@
 <resources>
     <string name="app_name">KiwariChat</string>
+    <string name="app_about">Aplikasi ini dibuat dengan tujuan mengikuti test di Kiwari Chat Indonesia. yakni merupakan layanan pesan instan, suara dan video yang lebih terasa nyata
+di desain khusus untuk pengguna Indonesia.</string>
+    <string name="app_made">Made by Muhammad Iqbal Najih</string>
 
     <string name="login_greet">Selamat Datang</string>
     <string name="login_subgreet">Masuk ke akunmu untuk melanjutkan</string>
-    <string name="login_username">Username atau Email</string>
-    <string name="login_usernamehint">masnajih</string>
+    <string name="login_email">Email</string>
+    <string name="login_emailhint">masnajih@mail.com</string>
     <string name="login_password">Password</string>
     <string name="login_passwordhint">*******</string>
     <string name="login_forgot">Lupa password ?</string>
     <string name="login_button">Masuk</string>
 
+    <string name="login_no_username">Email Harus Diisi!!!</string>
+    <string name="login_no_password">Password Harus Diisi!!!</string>
+
+    <string name="login_error_username">Email Belum Terdaftar!!!</string>
+    <string name="login_error_password">Password Salah!!!</string>
+
+    <string name="option">&#8942;</string>
 
     <string name="dummy_text">What you need to do is to have this LinearLayout of yours put inside a RelativeLayout. The relative layout is preferably your root layout with</string>
+    <string name="no_chat">Terlihat percakapan anda masih kosong</string>
+    <string name="last_chat">wow hebat</string>
+
+    <!--hardcoded user-->
+    <string-array name="user_name">
+        <item>Jarjit Singh</item>
+        <item>Ismail bin Mail</item>
+        <item>Mas Najih</item>
+        <item>Bang Rifqi</item>
+    </string-array>
+
+    <string-array name="user_email">
+        <item>jarjit@mail.com</item>
+        <item>ismail@mail.com</item>
+        <item>masnajih@mail.com</item>
+        <item>rifqi@mail.com</item>
+    </string-array>
+
+    <string-array name="user_avatar">
+        <item>https://api.adorable.io/avatars/160/jarjit@mail.com.png</item>
+        <item>https://api.adorable.io/avatars/160/ismail@mail.com.png</item>
+        <item>https://api.adorable.io/avatars/90/masnajih@mail.com.png</item>
+        <item>https://api.adorable.io/avatars/60/rifqi@mail.com.png</item>
+    </string-array>
+
+    <string-array name="user_password">
+        <item>123456</item>
+        <item>123456</item>
+        <item>123456</item>
+        <item>123456</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
