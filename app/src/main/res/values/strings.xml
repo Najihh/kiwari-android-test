@@ -3,6 +3,8 @@
     <string name="app_about">Aplikasi ini dibuat dengan tujuan mengikuti test di Kiwari Chat Indonesia. yakni merupakan layanan pesan instan, suara dan video yang lebih terasa nyata
 di desain khusus untuk pengguna Indonesia.</string>
     <string name="app_made">Made by Muhammad Iqbal Najih</string>
+    <string name="app_error">Upss terjadi kesalahan, coba beberapa saat lagi.</string>
+    <string name="app_exit">Klik kembali lagi untuk keluar.</string>
 
     <string name="login_greet">Selamat Datang</string>
     <string name="login_subgreet">Masuk ke akunmu untuk melanjutkan</string>

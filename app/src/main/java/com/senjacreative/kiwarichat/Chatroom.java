@@ -149,27 +149,31 @@ public class Chatroom extends AppCompatActivity {
         child1 = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Map map = dataSnapshot.getValue(Map.class);
-                String message = map.get("message").toString();
-                String time = map.get("time").toString();
-                String email = map.get("user").toString();
-                String avatar = map.get("avatar").toString();
-                String seen = map.get("seen").toString();
+                try{
+                    Map map = dataSnapshot.getValue(Map.class);
+                    String message = map.get("message").toString();
+                    String time = map.get("time").toString();
+                    String email = map.get("user").toString();
+                    String avatar = map.get("avatar").toString();
+                    String seen = map.get("seen").toString();
 
-                list_email.add(email);
-                list_avatar.add(avatar);
-                list_time.add(time);
-                list_message.add(message);
+                    list_email.add(email);
+                    list_avatar.add(avatar);
+                    list_time.add(time);
+                    list_message.add(message);
 
-                if(!email.matches(session.getEmail())){
-                    Log.d("SEEN","updated");
-                    Map<String, Object> seenUpdate = new HashMap<>();
-                    seenUpdate.put(dataSnapshot.getKey() + "/seen", "1");
-                    chat1.updateChildren(seenUpdate);
-                    setNotif();
+                    if(!email.matches(session.getEmail())){
+                        Log.d("SEEN","updated");
+                        Map<String, Object> seenUpdate = new HashMap<>();
+                        seenUpdate.put(dataSnapshot.getKey() + "/seen", "1");
+                        chat1.updateChildren(seenUpdate);
+                        setNotif();
+                    }
+                    showChat();
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(Chatroom.this, ""+getString(R.string.app_error), Toast.LENGTH_SHORT).show();
                 }
-
-                showChat();
             }
 
             @Override
@@ -196,14 +200,19 @@ public class Chatroom extends AppCompatActivity {
         child2 = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Map map = dataSnapshot.getValue(Map.class);
-                String email = map.get("user").toString();
+                try{
+                    Map map = dataSnapshot.getValue(Map.class);
+                    String email = map.get("user").toString();
 
-                if(!email.matches(session.getEmail())){
-                    Log.d("SEEN","updated");
-                    Map<String, Object> seenUpdate = new HashMap<>();
-                    seenUpdate.put(dataSnapshot.getKey() + "/seen", "1");
-                    chat2.updateChildren(seenUpdate);
+                    if(!email.matches(session.getEmail())){
+                        Log.d("SEEN","updated");
+                        Map<String, Object> seenUpdate = new HashMap<>();
+                        seenUpdate.put(dataSnapshot.getKey() + "/seen", "1");
+                        chat2.updateChildren(seenUpdate);
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(Chatroom.this, ""+getString(R.string.app_error), Toast.LENGTH_SHORT).show();
                 }
             }
 

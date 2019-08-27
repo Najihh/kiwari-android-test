@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
@@ -51,6 +52,7 @@ public class Chat extends Fragment implements AdapterConversation.EventListener{
     ArrayList<String>list_email,list_avatar,list_time,list_message,list_name,list_seen;
     Session session;
     ValueEventListener chat_listener;
+    Boolean ActiveActivity = true;
     Boolean stateNotif=true;
     MediaPlayer mp;
 
@@ -107,7 +109,9 @@ public class Chat extends Fragment implements AdapterConversation.EventListener{
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(dataSnapshot.getValue()!=null){
-                    parstChat(dataSnapshot);
+                    if(ActiveActivity){
+                        parstChat(dataSnapshot);
+                    }
                 }
             }
 
@@ -131,55 +135,59 @@ public class Chat extends Fragment implements AdapterConversation.EventListener{
         list_message.clear();
         list_name.clear();
         list_seen.clear();
-        for(DataSnapshot chat_list : data.getChildren()){
-            Log.d("CHAT LIST",""+chat_list.getKey());
 
-            String key = chat_list.getKey();
-            int key_sparrate = key.indexOf('_');
-            key = key.substring(0,key_sparrate);
-            Log.d("CHAT FROM",key);
+        try{
+            for(DataSnapshot chat_list : data.getChildren()){
+//            Log.d("CHAT LIST",""+chat_list.getKey());
+                String key = chat_list.getKey();
+                int key_sparrate = key.indexOf('_');
+                key = key.substring(0,key_sparrate);
+//            Log.d("CHAT FROM",key);
 
-            if (session.getEmail().contains(key)){
-                String t_key = chat_list.getKey();
-                int t_key_sparrate = chat_list.getKey().indexOf('_');
-                t_key = t_key.substring(t_key_sparrate+1);
-                Log.d("CHAT TO",t_key);
+                if (session.getEmail().contains(key)){
+                    String t_key = chat_list.getKey();
+                    int t_key_sparrate = chat_list.getKey().indexOf('_');
+                    t_key = t_key.substring(t_key_sparrate+1);
+                    Log.d("CHAT TO",t_key);
 
-                for (int a=0;a<u_email.size();a++){
-                    if (u_email.get(a).contains(t_key)){
-                        Log.d("CHAT WITH",u_name.get(a));
-                        list_email.add(u_email.get(a));
-                        list_avatar.add(u_avatar.get(a));
-                        list_name.add(u_name.get(a));
+                    for (int a=0;a<u_email.size();a++){
+                        if (u_email.get(a).contains(t_key)){
+                            Log.d("CHAT WITH",u_name.get(a));
+                            list_email.add(u_email.get(a));
+                            list_avatar.add(u_avatar.get(a));
+                            list_name.add(u_name.get(a));
+                        }
                     }
-                }
-                int total_message=0;
-                int m_seen=0;
-                for (DataSnapshot chat_detail : chat_list.getChildren()){
-                    Map map = chat_detail.getValue(Map.class);
-                    message = map.get("message").toString();
-                    time = map.get("time").toString();
-                    seen = map.get("seen").toString();
-                    email = map.get("user").toString();
-                    if (seen.equals("0")&&!email.equals(session.getEmail())){
-                        m_seen++;
+                    int total_message=0;
+                    int m_seen=0;
+                    for (DataSnapshot chat_detail : chat_list.getChildren()){
+                        Map map = chat_detail.getValue(Map.class);
+                        message = map.get("message").toString();
+                        time = map.get("time").toString();
+                        seen = map.get("seen").toString();
+                        email = map.get("user").toString();
+                        if (seen.equals("0")&&!email.equals(session.getEmail())){
+                            m_seen++;
+                        }
+                        total_message++;
                     }
-                    total_message++;
+
+                    list_message.add(message);
+                    list_time.add(time);
+                    list_seen.add(""+m_seen);
+
+                    if (m_seen>0){
+                        setNotif();
+                    }
+
+                    initViews();
                 }
-
-                list_message.add(message);
-                list_time.add(time);
-                list_seen.add(""+m_seen);
-
-                if (m_seen>0){
-                    setNotif();
-                }
-
-                initViews();
+                pos++;
             }
-            pos++;
+        }catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(getContext(), ""+getString(R.string.app_error), Toast.LENGTH_SHORT).show();
         }
-
     }
 
     void showNoChat(Boolean a){
@@ -234,6 +242,12 @@ public class Chat extends Fragment implements AdapterConversation.EventListener{
     public void onPause() {
         super.onPause();
         mp = null;
+        ActiveActivity = false;
+
+        if (chat_listener==null){
+            initListener();
+        }
+
         listchat.removeEventListener(chat_listener);
     }
 
@@ -243,6 +257,9 @@ public class Chat extends Fragment implements AdapterConversation.EventListener{
         if (chat_listener==null){
             initListener();
         }
+
+        ActiveActivity = true;
+
         mp = MediaPlayer.create(getContext(), R.raw.point);
         listchat.addValueEventListener(chat_listener);
     }

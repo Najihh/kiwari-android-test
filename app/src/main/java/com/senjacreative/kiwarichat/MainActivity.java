@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     AdapterTabLayout adapterTabLayout;
     Session session;
     ShowDialog dialog;
+    Boolean stateExit = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,9 +88,20 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void changeView(int pos){
-        TabLayout.Tab tab = tablayout.getTabAt(pos);
-        if (tab!=null)
-        tab.select();
+    @Override
+    public void onBackPressed() {
+        if (stateExit){
+            super.onBackPressed();
+            finish();
+        }else {
+            stateExit = true;
+            Toast.makeText(this, ""+getString(R.string.app_exit), Toast.LENGTH_SHORT).show();
+        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                stateExit = false;
+            }
+        },2000);
     }
 }
