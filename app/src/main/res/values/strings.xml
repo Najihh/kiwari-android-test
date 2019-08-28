@@ -31,33 +31,33 @@ di desain khusus untuk pengguna Indonesia.</string>
     <string-array name="user_name">
         <item>Jarjit Singh</item>
         <item>Ismail bin Mail</item>
-        <item>Mas Najih</item>
-        <item>Bang Rifqi</item>
-        <item>Om Luthfi</item>
+        <!--<item>Mas Najih</item>-->
+        <!--<item>Bang Rifqi</item>-->
+        <!--<item>Om Luthfi</item>-->
     </string-array>
 
     <string-array name="user_email">
         <item>jarjit@mail.com</item>
         <item>ismail@mail.com</item>
-        <item>masnajih@mail.com</item>
-        <item>rifqi@mail.com</item>
-        <item>luthfi@mail.com</item>
+        <!--<item>masnajih@mail.com</item>-->
+        <!--<item>rifqi@mail.com</item>-->
+        <!--<item>luthfi@mail.com</item>-->
     </string-array>
 
     <string-array name="user_avatar">
         <item>https://api.adorable.io/avatars/160/jarjit@mail.com.png</item>
         <item>https://api.adorable.io/avatars/160/ismail@mail.com.png</item>
-        <item>https://api.adorable.io/avatars/90/masnajih@mail.com.png</item>
-        <item>https://api.adorable.io/avatars/60/rifqi@mail.com.png</item>
-        <item>https://api.adorable.io/avatars/30/luthfi@mail.com.png</item>
+        <!--<item>https://api.adorable.io/avatars/90/masnajih@mail.com.png</item>-->
+        <!--<item>https://api.adorable.io/avatars/60/rifqi@mail.com.png</item>-->
+        <!--<item>https://api.adorable.io/avatars/30/luthfi@mail.com.png</item>-->
     </string-array>
 
     <string-array name="user_password">
         <item>123456</item>
         <item>123456</item>
-        <item>123456</item>
-        <item>123456</item>
-        <item>123456</item>
+        <!--<item>123456</item>-->
+        <!--<item>123456</item>-->
+        <!--<item>123456</item>-->
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
